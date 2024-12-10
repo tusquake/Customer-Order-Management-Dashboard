@@ -1,0 +1,55 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m">
+
+    <Dialog
+        id="userDetailsDialog"
+        title="Enter User Details"
+        contentWidth="400px"
+        contentHeight="320px"
+        draggable="true">
+        
+        <VBox width="300px" class="vbox">
+        <Label text="Customer Id:" />
+        <Input id="inputId" placeholder="Enter Customer Id" type="Number" enabled="false"/>
+
+        <Label text="Name:" />
+        <Input id="inputName" placeholder="Enter Customer name"/>
+
+        <Label text="Email:" />
+        <Input id="inputEmail" placeholder="Enter Customer name"/>
+
+        <Label text="Phone Number:" />
+        <Input id="inputPhone" placeholder="Enter Customer phone number"/>
+
+        <Label text="Address:" />
+        <Input id="inputAddress" placeholder="Enter Customer address"/>
+
+        <Label text="City:" />
+        <Input id="inputCity" placeholder="Enter Customer City"/>
+
+        <Label text="PinCode:" />
+        <Input id="inputPincode" placeholder="Enter Customer PinCode"/>
+
+        <Label text="State:" />
+        <Input id="inputState" placeholder="Enter Customer State"/>
+
+        <Label text="Country:" />
+        <Input id="inputCountry" placeholder="Enter Customer Country"/>
+
+        
+
+
+        
+
+        <Button text="Submit" icon="sap-icon://activity-2" press="onSubmit" type="Success" class="btn"/>
+        <VBox class="hbox">
+        <Text id="idtxtmsg" text="Enter your Details" class="txt"/>
+        </VBox>
+        </VBox>
+
+        <endButton>
+            <Button text="Close" press="onClose" type="Reject"></Button>
+        </endButton>
+    </Dialog>
+
+
+</core:FragmentDefinition>

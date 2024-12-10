@@ -1,0 +1,110 @@
+<mvc:View
+    xmlns:mvc="sap.ui.core.mvc" 
+    xmlns="sap.m"
+    controllerName="project2.controller.CustomerDetails"
+>
+    <Shell>
+        <App>
+            <pages>
+                <Page
+                    id="CustomerDetails"
+                    title="{i18n>title}"
+                >
+                    <content>
+                       
+
+            <VBox>
+                 <Panel 
+                    headerText="Customer Details"  class="sapUiSmallMargin"
+                   >
+                    <content >
+                    <Toolbar>
+                            <ToolbarSpacer />
+                            <SearchField
+                                id="searchField"
+                                width="30%"
+                                placeholder="Enter Customer ID to fetch details"
+                                liveChange="onCustomerIdChange"
+                                class="sapUiTinyMargin"
+                            />
+                            <ToolbarSpacer />
+                            <Button text="Show Details Form" press="onF4HelpPress"/> 
+                           
+                        </Toolbar>
+                        <Table items="{modele>/}" growing="true" mode="SingleSelectMaster" growingThreshold="10">
+                        <columns>
+                        <Column >
+                        <Text text="Customer id "/>
+                        </Column>
+                        <Column >
+                        <Text text="Customer Name "/>
+                        </Column>
+                        <Column >
+                        <Text text="Email "/>
+                        </Column>
+                        <Column >
+                        <Text text="Phone Number "/>
+                        </Column>
+                        <Column >
+                        <Text text="Address "/>
+                        </Column>
+                        <Column >
+                        <Text text="City "/>
+                        </Column>
+                        <Column >
+                        <Text text="Pincode "/>
+                        </Column>
+                        </columns>
+                        <ColumnListItem >
+                        <cells>
+         <Text  text="{modele>customerId} " class="sapUiTinyMargin"/>
+         <Text  text=" {modele>customerName}" class="sapUiTinyMargin"/>
+           <Text  text=" {modele>email}" class="sapUiTinyMargin" width ="80%"/>
+             <Text  text=" {modele>phoneNumber}" class="sapUiTinyMargin"/>
+               <Text  text=" {modele>address}" class="sapUiTinyMargin"/>
+                 <Text  text=" {modele>city}" class="sapUiTinyMargin"/>
+                                  <Text  text=" {modele>pinCode}" class="sapUiTinyMargin"/>
+                                             <!-- <Text  text=" {modele>/state}" class="sapUiTinyMargin"/> 
+                                                   <Text  text=" {modele>/country}" class="sapUiTinyMargin"/>  -->
+                                                   </cells>
+</ColumnListItem>
+
+
+
+         </Table>
+          <HBox
+                                alignContent="Center"
+                                justifyContent="Center"
+                                width="100%"
+                            >
+           <Button
+                                    text="Back"
+                                    width="auto"
+                                    press="onNavBack"
+                                    type="Emphasized"
+                                />
+                                </HBox>
+                    </content>
+                     <!-- <Toolbar>
+                            <ToolbarSpacer />
+                            <SearchField
+                                id="searchField"
+                                width="30%"
+                                placeholder="Search by SalesOrder Type"
+                                liveChange="onSearch"
+                            />
+                            <ToolbarSpacer />
+                            <content />
+                        </Toolbar> -->
+                </Panel>
+
+              
+                 
+
+                           </VBox>
+                    </content>
+                </Page>
+            </pages>
+        </App>
+    </Shell>
+</mvc:View>

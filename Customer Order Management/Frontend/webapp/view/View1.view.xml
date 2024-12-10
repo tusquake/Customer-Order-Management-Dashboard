@@ -1,0 +1,41 @@
+<mvc:View
+    xmlns:mvc="sap.ui.core.mvc" 
+    xmlns="sap.m"
+    controllerName="project2.controller.View1"
+>
+    <Shell>
+        <App>
+            <pages>
+                <Page
+                    id="page"
+                    title="{i18n>title}"
+                >
+                    <content>
+                       
+
+            <VBox>
+                <HBox
+                                alignContent="Center"
+                                justifyContent="Center"
+                                width="100%"
+                            >
+           <Button
+                                    text="CustomerDetails"
+                                    width="auto"
+                                    press="onPress"
+                                    type="Emphasized"
+                                />
+                                <Button
+                                    text="CustomerOrderDetails"
+                                    width="auto"
+                                    press="onPress1"
+                                    type="Emphasized"
+                                />
+                                </HBox>
+                           </VBox>
+                    </content>
+                </Page>
+            </pages>
+        </App>
+    </Shell>
+</mvc:View>

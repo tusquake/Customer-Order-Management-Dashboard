@@ -1,0 +1,20 @@
+/* Enter your custom styles here */
+
+.vbox{
+    margin: 50px;
+}
+
+.btn{
+    width:200px;
+    margin-top: 20px;
+    margin-left: 50px;
+}
+
+.hbox{
+    margin-top: 20px;
+    text-align: center;
+}
+
+.txt{
+    font-size: 15px;
+}

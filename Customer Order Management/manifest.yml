@@ -1,0 +1,10 @@
+applications:
+-  name: customer-order-management-app
+   memory: 800M
+   path: target/CustomerOrderManagement-0.0.1-SNAPSHOT.jar
+   random-route: true
+   buildpack: sap_java_buildpack
+   env:
+     TZ: GMT+5:30
+
+ 

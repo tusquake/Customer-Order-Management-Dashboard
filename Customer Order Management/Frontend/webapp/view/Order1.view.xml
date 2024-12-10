@@ -1,0 +1,107 @@
+<mvc:View
+    xmlns:core="sap.ui.core"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:semantic="sap.f.semantic"
+    xmlns:form="sap.ui.layout.form"
+    xmlns:l="sap.ui.layout"
+    controllerName="project2.controller.Order1"
+>
+    <Shell>
+        <App>
+            <pages>
+                <Page
+                    id="Order1"
+                >
+                <VBox>
+                 <Panel headerText="Order Information">
+                    <content>
+                        <VBox>
+                            <!-- Order Information -->
+
+                            <!-- Table to display order items -->
+                            <Table
+                                id="orderItemsTable"
+                                items="{/A_SalesOrderItem}"
+                            >
+                                <columns>
+                                    <Column>
+                                        <Text text="SalesOrder" />
+                                    </Column>
+                                    <Column>
+                                        <Text text="SalesOrderItem" />
+                                    </Column>
+                                    <Column>
+                                        <Text text="Material" />
+                                    </Column>
+                                    <Column>
+                                        <Text text="Quantity" />
+                                    </Column>
+                                    <Column>
+                                        <Text text="DeliveryStatus" />
+                                    </Column>
+                                </columns>
+
+                                <items>
+                                    <ColumnListItem>
+                                        <cells>
+                                            <Text text="{SalesOrder}" />
+                                            <Text text="{SalesOrderItem}" />
+                                            <Text text="{Material}" />
+                                            <Text text="{RequestedQuantity}" />
+                                           
+                                            <Text text="{DeliveryStatus}" />
+                                        </cells>
+                                    </ColumnListItem>
+                                </items>
+                            </Table>
+                            <HBox
+                                alignContent="Center"
+                                justifyContent="Center"
+                                width="100%"
+                            >
+                                <Button
+                                    text="Back"
+                                    width="auto"
+                                    press="onPress"
+                                    type="Emphasized"
+                                />
+                            </HBox>
+                        </VBox>
+                    </content>
+                    </Panel>
+                    <Panel
+                    backgroundDesign="Transparent"
+                    headerText="{i18n>ObjectCommentsTabTitle}">
+                    <content>
+                        <VBox class="sapUiSmallMargin">
+                            <HBox >
+                                <Label text="Comment:"/>
+                                <TextArea id="feedbackText" rows="2"/>
+                                
+                                <Label text="Rating:"/>
+                                <Input id="rating" type="Number" />
+                            </HBox>
+                            <Button text="Submit Feedback" press="onSubmitFeedback"></Button>
+                            
+                        </VBox>
+                        <List
+                                    id="idCommentsList"
+                                    noDataText="{i18n>ObjectCommentNoData}"
+                                    showSeparators="Inner"
+                                    items="{modelee>/}">
+                                    <FeedListItem
+                                        info="{modelee>feedbackDateTime}"
+                                        text="Feedback for Product No. {modelee>orderId}: {modelee>feedbackText}"
+                                    />
+                                </List>
+                       
+                    </content>
+                </Panel>
+                </VBox>
+                </Page>
+            </pages>
+        </App>
+    </Shell>
+</mvc:View>

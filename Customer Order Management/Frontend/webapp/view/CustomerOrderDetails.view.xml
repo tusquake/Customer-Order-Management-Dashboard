@@ -1,0 +1,97 @@
+<mvc:View
+    xmlns:mvc="sap.ui.core.mvc" 
+    xmlns="sap.m"
+    controllerName="project2.controller.CustomerOrderDetails"
+>
+    <Shell>
+        <App>
+            <pages>
+                <Page
+                    id="CustomerOrderDetails"
+                    title="{i18n>title}"
+                >
+                    <content>
+                       
+
+            <VBox>
+                 
+
+              
+                 <HBox justifyContent="Center">
+                    <Label text="Customer ID:"  class="sapUiSmallMargin"/>
+                     <SearchField
+                      
+                                width="100%"
+                                liveChange="onSearchCustomer"
+                                class="sapUiTinyMargin"
+                    />
+                </HBox>
+<Panel 
+                    headerText="Customer Orders" 
+                   >
+                        <Table
+                            id="customerList"
+                            items="{oModel>/}"
+                            growing="true"
+                            growingThreshold="20"
+                            growingScrollToLoad="false"
+                            class="sapUiSmallMarginTop"
+                            alternateRowColors="true"
+                            mode="SingleSelectMaster"
+                            selectionChange="onSelectionChange"
+                        >
+                            <columns>
+                                <Column>
+                                    <Text text="Customer ID:" />
+                                </Column>
+                                <Column>
+                                    <Text text="SalesOrder:" />
+                                </Column>
+                                <Column>
+                                    <Text text="SalesOrderType:" />
+                                </Column>
+                                <Column>
+                                    <Text text="SoldToParty: " />
+                                </Column>
+                                <Column>
+                                    <Text text="TransactionCurrency:" />
+                                </Column>
+                                <Column>
+                                    <Text text="SalesOrganization:" />
+                                </Column>
+                            </columns>
+
+                            <items>
+                                <ColumnListItem>
+                                    <cells>
+                                        <Text text="{oModel>PurchaseOrderByCustomer}" />
+                                        <Text text="{oModel>SalesOrder}" />
+                                        <Text text="{oModel>SalesOrderType}" />
+                                        <Text text="{oModel>SoldToParty}" />
+                                        <Text text="{oModel>TransactionCurrency}" />
+                                        <Text text="{oModel>SalesOrganization}" />
+                                    </cells>
+                                </ColumnListItem>
+                            </items>
+                        </Table>
+                         <HBox
+                                alignContent="Center"
+                                justifyContent="Center"
+                                width="100%"
+                            >
+                        
+                                <Button
+                                    text="Back"
+                                    width="auto"
+                                    press="onNavBack"
+                                    type="Emphasized"
+                                />
+                                </HBox>
+                        </Panel>
+                           </VBox>
+                    </content>
+                </Page>
+            </pages>
+        </App>
+    </Shell>
+</mvc:View>
